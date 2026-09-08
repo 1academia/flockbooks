@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --navy: #16223F;
+  --navy2: #1F3057;
+  --ice: #EDF1F8;
+  --paper: #FBFCFE;
+  --slate: #5B6478;
+  --ink: #1B2233;
+  --brass: #B9822A;
+  --line: #DCE1EA;
+  --good: #2F7D5A;
+  --good-bg: #E4F1EA;
+  --bad: #B3432B;
+  --bad-bg: #F8E7E1;
+}
+
+body {
+  background: var(--ice);
+  color: var(--ink);
+  font-family: "Public Sans", -apple-system, Segoe UI, Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Spectral", Georgia, serif;
+}
+
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* Form fields are styled under 16px throughout the app (Tailwind classes
+   win on specificity, hence !important here) — below that, iOS Safari
+   auto-zooms the whole page in on focus and doesn't zoom back out cleanly.
+   Only applies on small screens so desktop sizing is untouched. */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
